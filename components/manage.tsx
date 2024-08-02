@@ -18,7 +18,7 @@ const Manage = () => {
               </h2>
             ))}
             {dataUser.map((item) => (
-              <Avatar className="">
+              <Avatar key={item.id} className="">
                 <AvatarImage src={item.avatar} />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
