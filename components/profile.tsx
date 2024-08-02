@@ -2,19 +2,24 @@
 
 import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { dataUser } from '@/data';
 
 
 const Profile = () => {
     return (
       <section className="flex flex-col overflow w-full bg-neutral-900 p-7 rounded-2xl border border-neutral-800">
         <div className='flex justify-center items-center'>
-          <h2 className="text-white font-normal text-2xl mr-3">
-              Welcome, fefefe!
-          </h2>
-          <Avatar className="">
-            <AvatarImage src="/avatar.jpg" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+          {dataUser.map((item) => (
+            <h2 className="text-white font-normal text-2xl mr-3">
+              Welcome, {item.user}!
+            </h2>
+          ))}
+          {dataUser.map((item) => ( 
+            <Avatar className="">
+              <AvatarImage src={item.avatar} />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          ))}
         </div>
         <div className='flex justify-center items-center flex-col'>
           <h2 className='text-white font-normal text-xl mt-4'>
