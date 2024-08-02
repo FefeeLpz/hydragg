@@ -13,7 +13,7 @@ const Manage = () => {
           </h2>
           <div className="flex items-center mt-4">
             {dataUser.map((item) => (
-              <h2 className="mr-4">
+              <h2 key={item.id} className="mr-4">
                 Welcome, {item.user}!
               </h2>
             ))}
@@ -26,12 +26,12 @@ const Manage = () => {
           </div>
           <div className="flex flex-col justify-center mt-4">
             {dataUser.map((item) => (
-              <h2 className="">
+              <h2 key={item.id} className="">
                 Your Plan: {item.plan}
               </h2>
             ))}
             {dataUser.map((item) => (
-              <h2 className="mt-4">
+              <h2 key={item.id} className="mt-4">
               Expires in: {item.expires}
             </h2>
             ))}

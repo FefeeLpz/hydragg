@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { dataUser } from '@/data';
 
@@ -10,7 +9,7 @@ const Profile = () => {
       <section className="flex flex-col overflow w-full bg-neutral-900 p-7 rounded-2xl border border-neutral-800">
         <div className='flex justify-center items-center'>
           {dataUser.map((item) => (
-            <h2 className="text-white font-normal text-2xl mr-3">
+            <h2 key={item.id} className="text-white font-normal text-2xl mr-3">
               Welcome, {item.user}!
             </h2>
           ))}
